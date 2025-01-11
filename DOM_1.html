@@ -1,0 +1,240 @@
+
+
+<!-- Assignment 2: Changing Styles
+Question:
+How will you change the color of a paragraph to red when a button is clicked?
+
+Hint:
+
+Identify how to select the paragraph and the button.
+Explore how to use the style property to modify CSS styles. -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	h1{
+		color: red;
+		background: yellow;
+	}
+</style>
+<body>
+	<h1>hello World!!</h1>
+	<button onclick="changeTheText()">Text change</button>
+</body>
+<script>
+	function changeTheText(){
+		let theLabel = document.querySelector("h1");
+		theLabel.innerHTML = "HARE KRISHNA!!";
+
+		let theColorChange = document.querySelector("h1");
+		theColorChange.style.color = "pink";
+		theColorChange.style.background = "green";
+	}
+</script>
+</html> -->
+
+
+
+<!-- Assignment 3: Adding and Removing Elements
+Question:
+How will you add a new item to an empty <ul> when a button is clicked?
+
+Hint:
+
+Research how to create a new list item dynamically.
+Look for a method to attach the new item to the existing list. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>hare krishna</li>
+		<li>nitai gaur haribol</li>
+	</ul>
+	<button onclick="addItems()">Add Items</button>
+</body>
+<script>
+	// function addItems(){
+	// 	let getItems = document.createElement("LI");
+	// 	let createItems = document.createTextNode("krishna is the supreme personality of godhead");
+	// 	getItems.appendChild(createItems);
+	// 	document.querySelector("UL").appendChild(getItems);
+	// }
+
+	function addItems() {
+    // Create a new list item
+    let newItem = document.createElement("LI");
+
+    // Create the text for the list item
+    let textContent = document.createTextNode("Krishna is the Supreme Personality of Godhead");
+
+    // Append the text to the new list item
+    newItem.appendChild(textContent);
+
+    // Append the new list item to the unordered list
+    document.querySelector("UL").appendChild(newItem);
+}
+
+</script>
+</html> -->
+
+
+<!-- Assignment 4: Input and Display
+Question:
+How will you display the text entered in an input box inside a paragraph when a button is clicked?
+
+Hint:
+
+Find a way to get the value from the input box.
+Look for a way to set the paragraph's content dynamically. -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM for input box</title>
+</head>
+<body>
+    <div></div>
+    <input type="text">input and add</input>
+    <br>
+    <button onclick="addTheValue()">Click and add the value</button>
+</body>
+<script>
+    function addTheValue(){
+        let getEL = document.querySelector("input");
+        let textNode = document.createElement("div");
+        textNode.innerHTML = getEL.value;
+
+        const parentEL = document.querySelector("div");
+        parentEL.appendChild(textNode);
+    }
+</script>
+</html> -->
+
+<!-- Assignment 5: Event Listeners
+Question:
+How will you change the background color of the page to red, green, or blue when corresponding buttons are clicked?
+
+Hint:
+
+Explore event listeners to detect which button was clicked.
+Research how to set the background color of the page using JavaScript. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	body{
+		background-color: lightsalmon;
+	}
+</style>
+<body>
+		<button id="red" onclick="ChangeTheColorOfPage()">Change bg-color to red</button>
+		<button id="yellow" onclick="changeBgToYellow()">Change bg-color to yellow</button>
+		<button id="green" onclick="changeBgToGreen()">Change bg-color to green</button>
+</body>
+<script>
+    function ChangeTheColorOfPage(){
+		let changeBgToRed = document.querySelector("BODY");
+		changeBgToRed.style.backgroundColor = "red";
+	}
+
+	function changeBgToYellow(){
+		let changeBgToYellow = document.querySelector("BODY");
+		changeBgToYellow.style.backgroundColor = "yellow";
+	}
+
+	function changeBgToGreen(){
+		let changeBgToGreen = document.querySelector("BODY");
+		changeBgToGreen.style.backgroundColor = "green";
+	}
+</script>
+</html> -->
+
+<!-- Assignment 6: Toggling Visibility
+Question:
+How will you hide a paragraph when a button is clicked and show it again when clicked again?
+
+Hint:
+
+Learn how to toggle between showing and hiding an element using CSS properties.
+Consider a way to track the current visibility state. -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	p{
+		color: red;
+	}
+</style>
+<body>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi accusamus eveniet velit adipisci doloremque esse libero officia. Quas deleniti iste vel sequi, laboriosam unde impedit error pariatur! Soluta, dolores quibusdam.</p>
+	<button onclick="disappearPara()">disappearPara</button>
+</body>
+<script>
+	function disappearPara(){
+		const doNotDisplay = document.querySelector("p");
+		const parentNode = doNotDisplay.parentNode;
+		parentNode.removeChild(doNotDisplay);
+	}
+</script>
+</html> -->
+
+<!-- Assignment 7: Counter
+Question:
+How will you create a counter that increases or decreases when respective buttons are clicked?
+
+Hint:
+
+Use a variable to store the current count.
+Research how to update the displayed value dynamically. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div> 0 </div>
+	<button onclick="increaseTheValue()">increase the value</button>
+	<button onclick="decreaseTheValue()">decrease the value</button>
+</body>
+<script>
+	let increeValue = 0;
+	function increaseTheValue(){
+		const letTheValue = document.querySelector("div");
+		increeValue++;
+		letTheValue.innerText = increeValue; 
+	}
+
+	function decreaseTheValue(){
+		const theValue = document.querySelector("div");
+		increeValue--;
+		theValue.innerText = increeValue;
+	}
+</script>
+</html> -->
+
