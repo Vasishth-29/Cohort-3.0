@@ -3,34 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo</title>
+  <title>ToDo</title>
 </head>
 <body>
-  <input type="text">
-  <button onclick="addTheValue()">Add the value</button>
-  
+  <div id="Todos">
+
+  </div>
+  <input id="inp" type="text"></input>
+  <button onclick="newTodo()">AddValue</button>
 </body>
 <script>
-  let ctr = 1;
-  function deleteTodo(index){
-    const getEl = document.getElementById(index);
-    getEl.parentNode.removeChild(getEl);
-  }
+  let currentIndex = 0;
 
-  function addTheValue(){
-    const theValue = document.querySelector("input");
-    const value = theValue.value;
+  function newTodo(){
+    const getEL = document.getElementById("inp");
+    const value = getEL.value.trim();
+
+    if (value === '') {
+      alert("You have not inputed the value");
+      return;
+    }
+
+    const parentEL = document.getElementById("Todos");
 
     const newDiv = document.createElement("div");
-    newDiv.setAttribute("id", ctr);
-    newDiv.innerHTML = "<div>" + value + '</div><button onclick="deleteTodo(' + ctr + ')">delete</button>';
+    newDiv.setAttribute("id", 'todo-'+ currentIndex);
 
-    document.querySelector("body").appendChild(newDiv)
-    ctr++;
+    const  newHeading = document.createElement("h4");
+    newHeading.textContent=currentIndex +'. '+ value;
 
-  }
+    const newButton = document.createElement("button");
+    newButton.textContent = "delete";
+    newButton.setAttribute("onclick", "deleteTodo("+ currentIndex +")");
 
-  
-  
+    newDiv.appendChild(newHeading);
+    newDiv.appendChild(newButton);
+    
+    parentEL.appendChild(newDiv);
+    
+    currentIndex++;
+
+    getEL.value = '';
+    }
+
+    function deleteTodo(index){
+      const element = document.getElementById("todo-"+ index);
+      if (element) {
+        element.parentNode.removeChild(element);
+      }
+    }
 </script>
 </html>
