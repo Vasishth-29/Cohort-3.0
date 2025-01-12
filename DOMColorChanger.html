@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    div{
+        display: flex;
+        justify-content: center;
+        height: 100px;
+        width: 1000px;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 1);
+        margin-left: 150px;
+        border-radius: 20px;
+    }
+
+    #red, #yellow , #green , #blue , #violet , #default{
+        color: black;
+        font-size: 30px;
+        font-weight: 400;
+        border-radius: 20px;
+        width: 150px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+
+    #red{
+        background-color: red;
+        border: none;
+        margin-left: 20px;
+    }
+
+    #yellow{
+        background-color: yellow;
+        border: none;
+    }
+
+    #green{
+        background-color: green;
+        border: none;
+    }
+
+    #blue{
+        background-color: blue;
+        border: none;
+    }
+
+    #violet{
+        background-color: violet;
+        border: none;
+    }
+
+    #default{
+        background-color: white;
+        border-color: black;
+    }
+</style>
+<body>
+    <div>
+        <button id="red" onclick="turnRed()">RED</button>
+        <button id="yellow" onclick="turnYellow()">YELLOW</button>
+        <button id="green" onclick="turnGreen()">GREEN</button>
+        <button id="blue" onclick="turnBlue()">BLUE</button>
+        <button id="violet" onclick="turnViolet()">VIOLET</button>
+        <button id="default" onclick="defaultColor()">default</button>
+    </div>
+</body>
+<script>
+    function turnRed(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "red";
+    }
+
+    function turnYellow(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "Yellow";
+    }
+
+    function turnGreen(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "Green";
+    }
+
+    function turnBlue(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "Blue";
+    }
+
+    function turnViolet(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "Violet";
+    }
+
+    function defaultColor(){
+        const colorRed = document.querySelector("body");
+        colorRed.style.backgroundColor = "White";
+    }
+</script>
+</html>
