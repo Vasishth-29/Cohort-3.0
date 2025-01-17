@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+</head>
+<style>
+    .parent-div{
+        background: linear-gradient(140deg, #f6d365, #fda085);
+        max-width: 200vh;
+        min-height: 97vh;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 50px;
+        text-align: center;
+    }
+    #child1{
+        background: white;
+        width: 500px;
+        height: 355px;
+        justify-content: space-evenly;
+        text-align: center;
+        border-radius: 30px;
+    }
+
+    h1{
+        color:rgb(15, 228, 15);
+        font-size: 40px;
+        font-weight:500;
+    }
+
+    input { 
+        padding: 10px; 
+        width: 300px; 
+        height: 20px;
+        border-radius: 10px; 
+        border-style: dashed;
+        border-color: greenyellow;
+        
+    }
+
+    input:hover{
+        border-color: rgb(15, 228, 15);
+    }
+
+    #addbtn{
+        padding: 10px; 
+        width: 50px; 
+        height: 40px;
+        border: 1px solid #ccc; 
+        border-radius: 10px; 
+        background-color: rgb(15, 228, 15);
+    }
+
+    #addbtn:hover{
+        background-color: lightgreen;
+    }
+
+    ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0px 0px 40px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Added gap for spacing */
+            width: 400px;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 5px ;
+            cursor: pointer;
+            height: 25px;
+            
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+
+
+</style>
+<body>
+    <div class="parent-div">
+        <div id="child1">
+            <h1>TODO List</h1>
+            <input type="text" placeholder="input here...">
+            <button id="addbtn">Add</button>
+            <ul></ul>
+        </div>
+    </div>
+</body>
+<script>
+    const addBtn = document.getElementById('addbtn');
+
+    function addTasks(){
+        const inputBox = document.querySelector('input');
+        const createEl = document.createElement('li');
+        createEl.innerHTML = `${inputBox.value.trim()} <button>delete</button>`;
+
+        const parentEl = document.querySelector('ul');
+        parentEl.appendChild(createEl);
+
+        function deleteTasks(){
+            parentEl.removeChild(createEl);
+        }
+
+        createEl.addEventListener('click', deleteTasks);
+
+    }   
+
+    addBtn.addEventListener('click', addTasks);
+</script>
+</html>
